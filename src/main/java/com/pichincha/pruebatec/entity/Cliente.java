@@ -6,18 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@NoArgsConstructor @AllArgsConstructor @Builder
 @Entity
 @Table(name = "cliente")
-public class Cliente {
-	
+public class Cliente extends Persona{
+	@Getter @Setter
 	private String contrasena;
+	@Getter @Setter
 	private Boolean estado;
 
 	@OneToMany(mappedBy = "cliente")
