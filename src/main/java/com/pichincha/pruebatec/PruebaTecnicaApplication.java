@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.pichincha.pruebatec.repository.ClienteRepository;
+import com.pichincha.pruebatec.repository.CustomMovimientoRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -13,7 +13,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class PruebaTecnicaApplication {
 
-	private final ClienteRepository clienteRepository;
+	private final CustomMovimientoRepository movimientoRespository;
+	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(PruebaTecnicaApplication.class, args);
@@ -22,6 +23,7 @@ public class PruebaTecnicaApplication {
 	@Bean
 	CommandLineRunner run() {
 		return (String[] as)->{
+			movimientoRespository.reporteMovimientos("20/10/2023", "25/10/2023");
 		};
 	}
 
