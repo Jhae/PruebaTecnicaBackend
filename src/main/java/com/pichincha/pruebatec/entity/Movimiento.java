@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor @AllArgsConstructor @Builder
 @Entity
-@Table(name = "movimiento")
+@Table(name = "ph_movimiento")
 public class Movimiento {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
