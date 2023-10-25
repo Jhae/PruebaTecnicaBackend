@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/movimiento")
+@RequestMapping("/api/movimiento")
 public class MovimientoController {
 	
 	private final MovimientoService movimientoService;
