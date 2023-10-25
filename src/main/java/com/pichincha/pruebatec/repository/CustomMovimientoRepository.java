@@ -23,11 +23,11 @@ public class CustomMovimientoRepository {
 			+ "mv.valor as monto_movimiento, "
 			+ "mv.saldo_final as saldo_final, "
 			+ "mv.estado as estado_movimiento "
-			+ "from movimiento mv "
-			+ "inner join tipo_movimiento tp_mv on tp_mv.id = mv.id_tipo_movimiento "
-			+ "inner join cuenta cta on cta.id = mv.id_cuenta "
-			+ "inner join tipo_cuenta tp_cta on tp_cta.id = cta.id_tipo_cuenta "
-			+ "inner join cliente cli on cli.id = cta.id_cliente "
+			+ "from ph_movimiento mv "
+			+ "inner join ph_tipo_movimiento tp_mv on tp_mv.id = mv.id_tipo_movimiento "
+			+ "inner join ph_cuenta cta on cta.id = mv.id_cuenta "
+			+ "inner join ph_tipo_cuenta tp_cta on tp_cta.id = cta.id_tipo_cuenta "
+			+ "inner join ph_cliente cli on cli.id = cta.id_cliente "
 			+ "where fecha between TO_DATE(?,'DD/MM/YYYY') and TO_DATE(?,'DD/MM/YYYY') + INTERVAL '1' DAY "
 			+ "order by cli.nombres, mv.fecha desc ";
 	

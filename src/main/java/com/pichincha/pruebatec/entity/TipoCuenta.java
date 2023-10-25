@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor @AllArgsConstructor @Builder
 @Entity
-@Table(name = "tipo_cuenta")
+@Table(name = "ph_tipo_cuenta")
 public class TipoCuenta {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

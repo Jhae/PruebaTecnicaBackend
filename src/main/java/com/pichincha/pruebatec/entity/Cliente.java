@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import lombok.Data;
 @Data
 @Entity
-@Table(name = "cliente")
+@Table(name = "ph_cliente")
 public class Cliente extends Persona{
 	private String contrasena;
 	private Boolean estado;
