@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,6 +36,7 @@ public class Movimiento {
 	@JoinColumn(name = "id_tipo_movimiento", referencedColumnName = "id")
 	private TipoMovimiento tipoMovimiento;
 	
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "id_cuenta", referencedColumnName = "id")
 	private Cuenta cuenta;
