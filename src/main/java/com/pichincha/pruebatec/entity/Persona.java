@@ -10,9 +10,9 @@ import lombok.Data;
 @Data
 @MappedSuperclass
 public class Persona {
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nombre;
+	private String nombres;
 	private String genero;
 	private String edad;
 	private String identificacion;

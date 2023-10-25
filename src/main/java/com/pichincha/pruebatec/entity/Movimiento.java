@@ -1,6 +1,10 @@
 package com.pichincha.pruebatec.entity;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,13 +21,15 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "movimiento")
 public class Movimiento {
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String fecha;
-	private String valor;
-	private String saldo;
+	private Date fecha;
+	private BigDecimal saldoInicial;
+	private BigDecimal valor;
+	private BigDecimal saldoFinal;
+	private Boolean estado;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_tipo_movimiento", referencedColumnName = "id")
 	private TipoMovimiento tipoMovimiento;
 	

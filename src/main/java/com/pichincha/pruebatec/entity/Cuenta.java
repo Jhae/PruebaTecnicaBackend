@@ -1,5 +1,6 @@
 package com.pichincha.pruebatec.entity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -22,10 +23,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "cuenta")
 public class Cuenta {
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String numero;
-	private String saldoInicial;
+	private BigDecimal saldoInicial;
 	private Boolean estado;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
